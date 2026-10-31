@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+:root {
+    --forest: #173f32;
+    --forest-2: #245b46;
+    --leaf: #4d8b62;
+    --mint: #e8f1e8;
+    --cream: #f7f7f0;
+    --paper: #ffffff;
+    --ink: #18231d;
+    --muted: #68756d;
+    --line: #e1e8e1;
+    --danger: #a63e35;
+    --shadow: 0 18px 55px rgba(25, 54, 39, .09);
+    --radius: 22px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.6;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    color: inherit;
+}
+
+.site-header {
+    width: min(1160px, calc(100% - 40px));
+    margin: 0 auto;
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    text-decoration: none;
+}
+
+.brand-mark {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    background: var(--forest);
+    font-size: 21px;
+}
+
+.brand-name {
+    font: 800 17px 'Manrope', sans-serif;
+    letter-spacing: -.5px;
+}
+
+.brand-subtitle {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.api-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,.72);
+    padding: 8px 12px;
+    border-radius: 99px;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #c58a30;
+}
+
+.api-status[data-state="online"] .status-dot {
+    background: #3c9a63;
+}
+
+.api-status[data-state="offline"] .status-dot {
+    background: #c14e43;
+}
+
+.page-shell {
+    width: min(1160px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+.eyebrow {
+    color: var(--leaf);
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Manrope', sans-serif;
+    letter-spacing: -.04em;
+    line-height: 1.15;
+}
+
+h1 {
+    font-size: clamp(38px, 5.5vw, 64px);
+}
+
+h2 {
+    font-size: clamp(26px, 3vw, 36px);
+}
+
+h3 {
+    font-size: 19px;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border: 0;
+    border-radius: 13px;
+    padding: 13px 19px;
+    cursor: pointer;
+    background: var(--forest);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    transition: .18s ease;
+}
+
+.btn:hover {
+    background: var(--forest-2);
+    transform: translateY(-1px);
+    box-shadow: 0 9px 20px rgba(23,63,50,.16);
+}
+
+.btn:disabled {
+    opacity: .48;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-secondary {
+    color: var(--forest);
+    background: #edf3ed;
+}
+
+.btn-secondary:hover {
+    color: #fff;
+}
+
+.error-box,
+.notice-box {
+    display: none;
+    border-radius: 14px;
+    padding: 12px 15px;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+.error-box.visible {
+    display: block;
+    background: #fff0ed;
+    color: var(--danger);
+    border: 1px solid #f2d3ce;
+}
+
+.notice-box.visible {
+    display: block;
+    background: #f1f5ed;
+    color: #48624b;
+    border: 1px solid #dce8d8;
+}
+
+.site-footer {
+    padding: 34px 20px 42px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.site-footer strong {
+    color: var(--forest);
+}
+
+@media (max-width: 640px) {
+
+    .site-header,
+    .page-shell {
+        width: min(100% - 28px, 1160px);
+    }
+
+    .site-header {
+        min-height: 68px;
+    }
+
+    .header-right {
+        gap: 8px;
+    }
+
+    .api-status {
+        padding: 7px 9px;
+        font-size: 10px;
+    }
+
+    .brand-name {
+        font-size: 15px;
+    }
+
+    .brand-subtitle {
+        font-size: 9px;
+    }
+}

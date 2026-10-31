@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#173f32">
+    <meta name="description" content="Bird identification report and species information from Indian Bird Atlas.">
+
+    <title>Bird Identification Report — Indian Bird Atlas</title>
+
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="result.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+
+        <a class="brand" href="index.html" aria-label="Indian Bird Atlas home">
+            <span class="brand-mark">✳</span>
+
+            <span>
+                <span class="brand-name">Indian Bird Atlas</span>
+                <span class="brand-subtitle">A field guide in your browser</span>
+            </span>
+        </a>
+
+        <a class="back-link" href="index.html">
+            ← Identify another bird
+        </a>
+
+    </header>
+
+
+    <main class="page-shell result-shell">
+
+        <!-- UNIFIED REPORT LOADER -->
+<section id="preparingPanel" class="preparing-panel">
+
+    <div class="preparing-card">
+
+        <div class="preparing-spinner"></div>
+
+        <p class="eyebrow">INDIAN BIRD ATLAS</p>
+
+        <h1>Preparing your bird report</h1>
+
+        <p id="preparingMessage">
+            Analysing your photograph and preparing the species information.
+        </p>
+
+        <div class="preparing-steps">
+
+            <div class="preparing-step" id="stepIdentification">
+                <span>01</span>
+                <div>
+                    <strong>Bird identification</strong>
+                    <small>WingCLIP image analysis</small>
+                </div>
+                <span class="step-indicator">✓</span>
+            </div>
+
+            <div class="preparing-step active" id="stepResearch">
+                <span>02</span>
+                <div>
+                    <strong>Species research</strong>
+                    <small>Gemini and GBIF information</small>
+                </div>
+                <span class="step-indicator">…</span>
+            </div>
+
+            <div class="preparing-step" id="stepComplete">
+                <span>03</span>
+                <div>
+                    <strong>Complete report</strong>
+                    <small>Preparing your final result</small>
+                </div>
+                <span class="step-indicator">○</span>
+            </div>
+
+        </div>
+
+        <p class="preparing-footnote">
+            Your identification and species information will appear together.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- COMPLETE REPORT: hidden until research finishes -->
+<div id="reportContent" hidden>
+
+        <div class="result-topline">
+
+            <p class="eyebrow">
+                Your identification report
+            </p>
+
+            <span class="report-tag">
+                WINGCLIP · GEMINI RESEARCH
+            </span>
+
+        </div>
+
+
+        <div
+            id="resultError"
+            class="result-error"
+            role="alert"
+            hidden
+        >
+            No report was found. Return to the upload page and identify a photograph first.
+        </div>
+
+
+        <!-- IDENTIFICATION RESULT -->
+
+        <section
+            class="result-layout"
+            aria-labelledby="birdCommonName"
+        >
+
+            <div class="result-photo-card">
+
+                <img
+                    id="uploadedBirdImage"
+                    alt="Your uploaded bird photograph"
+                >
+
+                <div class="photo-caption">
+                    <span class="photo-dot"></span>
+                    <span id="uploadedFilename">
+                        Uploaded photograph
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="identity-card">
+
+                <div class="identified-label">
+
+                    <span class="identified-check">✓</span>
+
+                    WingCLIP's closest catalogue match
+
+                </div>
+
+                <h1 id="birdCommonName">
+                    Loading identification…
+                </h1>
+
+                <p
+                    class="scientific-name"
+                    id="birdScientificName"
+                ></p>
+
+                <p
+                    class="bird-description"
+                    id="birdDescription"
+                >
+                    Your bird profile will appear here.
+                </p>
+
+                <div class="identity-meta">
+
+                    <span
+                        id="similarityScore"
+                        class="meta-chip"
+                        hidden
+                    ></span>
+
+                    <span
+                        id="modelName"
+                        class="meta-chip"
+                        hidden
+                    ></span>
+
+                </div>
+
+                <div
+                    id="researchStatus"
+                    class="research-status"
+                    data-state="pending"
+                    role="status"
+                >
+                    Preparing species information…
+                </div>
+
+                <p
+                    id="profileAvailability"
+                    class="profile-availability"
+                    hidden
+                ></p>
+
+            </div>
+
+        </section>
+
+
+        <!-- IMAGE QUALITY -->
+
+        <section
+            class="quality-panel"
+            id="qualityPanel"
+            hidden
+            aria-labelledby="qualityTitle"
+        >
+
+            <div class="quality-icon">✦</div>
+
+            <div>
+
+                <strong id="qualityTitle">
+                    Photograph quality
+                </strong>
+
+                <ul id="qualityWarnings"></ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- SPECIES INFORMATION -->
+
+        <section
+            class="facts-section"
+            aria-labelledby="factsTitle"
+        >
+
+            <div class="facts-heading">
+
+                <p class="eyebrow">
+                    Species guide
+                </p>
+
+                <h2 id="factsTitle">
+                    Get to know this bird
+                </h2>
+
+                <p class="section-intro">
+                    A concise species profile generated from the identified scientific name.
+                </p>
+
+            </div>
+
+
+            <div class="facts-grid">
+
+                <article class="fact-card">
+
+                    <span class="fact-icon" aria-hidden="true">⌂</span>
+
+                    <div>
+                        <span class="fact-label">Habitat</span>
+                        <p id="birdHabitat">Not available</p>
+                    </div>
+
+                </article>
+
+
+                <article class="fact-card">
+
+                    <span class="fact-icon" aria-hidden="true">◉</span>
+
+                    <div>
+                        <span class="fact-label">Diet</span>
+                        <p id="birdDiet">Not available</p>
+                    </div>
+
+                </article>
+
+
+                <article class="fact-card">
+
+                    <span class="fact-icon" aria-hidden="true">⌖</span>
+
+                    <div>
+                        <span class="fact-label">Distribution in India</span>
+                        <p id="birdDistribution">Not available</p>
+                    </div>
+
+                </article>
+
+
+                <article class="fact-card">
+
+                    <span class="fact-icon" aria-hidden="true">✧</span>
+
+                    <div>
+                        <span class="fact-label">Family</span>
+                        <p id="birdFamily">Not available</p>
+                    </div>
+
+                </article>
+
+
+                <article class="fact-card">
+
+                    <span class="fact-icon" aria-hidden="true">↗</span>
+
+                    <div>
+                        <span class="fact-label">Behaviour</span>
+                        <p id="birdBehaviour">Not available</p>
+                    </div>
+
+                </article>
+
+
+                <article class="fact-card">
+
+                    <span class="fact-icon" aria-hidden="true">◎</span>
+
+                    <div>
+                        <span class="fact-label">Identification features</span>
+                        <p id="birdIdentificationFeatures">Not available</p>
+                    </div>
+
+                </article>
+
+
+                <article class="fact-card">
+
+                    <span class="fact-icon" aria-hidden="true">♡</span>
+
+                    <div>
+                        <span class="fact-label">Conservation status</span>
+                        <p id="birdConservationStatus">Not available</p>
+                    </div>
+
+                </article>
+
+
+                <article class="fact-card">
+
+                    <span class="fact-icon" aria-hidden="true">⌁</span>
+
+                    <div>
+                        <span class="fact-label">Conservation notes</span>
+                        <p id="birdConservationNote">Not available</p>
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <div
+                id="taxonomySummary"
+                class="taxonomy-summary"
+                hidden
+            ></div>
+
+            <p
+                class="profile-source"
+                id="profileSource"
+            ></p>
+
+        </section>
+
+
+        <!-- SOURCES -->
+
+        <section
+            id="sourcesSection"
+            class="sources-section"
+            hidden
+            aria-labelledby="sourcesTitle"
+        >
+
+            <div class="facts-heading">
+
+                <p class="eyebrow">
+                    References
+                </p>
+
+                <h2 id="sourcesTitle">
+                    Sources and further reading
+                </h2>
+
+                <p class="section-intro">
+                    Open the linked references to check taxonomy and supporting information.
+                </p>
+
+            </div>
+
+            <ul
+                id="sourceList"
+                class="source-list"
+            ></ul>
+
+        </section>
+
+
+        <!-- DISCLAIMER -->
+
+        <section class="report-note">
+
+            <strong>
+                Important identification note
+            </strong>
+
+            <p id="identificationNote">
+                This is the model's closest catalogue match, not a confirmed field identification.
+            </p>
+
+            <p class="report-note-secondary">
+                The similarity score is not a probability. Gemini researches the species name returned by WingCLIP; it does not independently verify the photograph.
+            </p>
+
+        </section>
+
+
+        <!-- ACTION -->
+
+        <div class="result-actions">
+
+            <a class="btn" href="index.html">
+                Identify another bird →
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        Observe carefully · Learn continually ·
+        <strong>Indian Bird Atlas</strong>
+
+    </footer>
+
+
+    <script src="result.js" defer></script>
+
+</body>
+</html>

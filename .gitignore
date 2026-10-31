@@ -1,0 +1,109 @@
+
+# ==========================================
+# SECRETS AND ENVIRONMENT VARIABLES
+# ==========================================
+
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# ==========================================
+# PYTHON VIRTUAL ENVIRONMENTS
+# ==========================================
+
+.venv/
+venv/
+env/
+ENV/
+
+# ==========================================
+# PYTHON CACHE AND COMPILED FILES
+# ==========================================
+
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ==========================================
+# MACHINE LEARNING MODEL WEIGHTS
+# ==========================================
+
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.tflite
+*.engine
+
+# Precomputed model embeddings and arrays
+*.npy
+*.npz
+
+# ==========================================
+# HUGGING FACE AND MODEL CACHES
+# ==========================================
+
+.cache/
+huggingface_cache/
+models_cache/
+torch_cache/
+
+# ==========================================
+# LOGS AND TEMPORARY FILES
+# ==========================================
+
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+
+# ==========================================
+# USER UPLOADS AND GENERATED OUTPUTS
+# ==========================================
+
+uploads/
+user_uploads/
+generated/
+outputs/
+
+# ==========================================
+# FRONTEND DEPENDENCIES AND BUILDS
+# ==========================================
+
+node_modules/
+dist/
+build/
+
+# ==========================================
+# IDE AND EDITOR FILES
+# ==========================================
+
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ==========================================
+# OPERATING SYSTEM FILES
+# ==========================================
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==========================================
+# GENERATED ARCHIVES
+# ==========================================
+
+bird-atlas-source.zip

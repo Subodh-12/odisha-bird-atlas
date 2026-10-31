@@ -1,0 +1,100 @@
+{
+  "species": {
+    "Pavo cristatus": {
+      "description": "The Indian Peafowl is a large pheasant. The male is famous for its iridescent blue neck and long, colourful train of upper-tail coverts, which it fans during courtship displays.",
+      "habitat": "Open forests, scrub, forest edges, farmland and areas close to villages or water.",
+      "diet": "Omnivorous; feeds on seeds, grains, fruits, insects and other small animals.",
+      "distribution": "Native to the Indian subcontinent and widely found across India.",
+      "family": "Phasianidae",
+      "source_name": "Local starter species guide"
+    },
+    "Coracias benghalensis": {
+      "description": "The Indian Roller is a striking blue-and-brown bird. Its bright blue wing feathers are especially visible when it flies.",
+      "habitat": "Open country, farmland, grassland, scrub and lightly wooded landscapes.",
+      "diet": "Mainly insects, with occasional small reptiles, amphibians and other small prey.",
+      "distribution": "Common across much of the Indian subcontinent.",
+      "family": "Coraciidae",
+      "source_name": "Local starter species guide"
+    },
+    "Alcedo atthis": {
+      "description": "The Common Kingfisher is a small, compact bird with bright blue upperparts, orange underparts and a long pointed bill used for catching small fish.",
+      "habitat": "Streams, ponds, lakes, canals and other clear waters with suitable perches.",
+      "diet": "Primarily small fish; it may also take aquatic insects and other small aquatic animals.",
+      "distribution": "Occurs across a broad range of Europe, Africa and Asia, including India.",
+      "family": "Alcedinidae",
+      "source_name": "Local starter species guide"
+    },
+    "Halcyon smyrnensis": {
+      "description": "The White-throated Kingfisher has a rich chestnut head and body, a white throat and breast, bright blue wings and a large red bill. It often hunts away from water too.",
+      "habitat": "Farmland, gardens, wetlands, open woodland and urban areas, often near a suitable perch.",
+      "diet": "Large insects, fish, frogs, lizards and other small animals.",
+      "distribution": "Widespread across the Indian subcontinent and parts of western and southeastern Asia.",
+      "family": "Alcedinidae",
+      "source_name": "Local starter species guide"
+    },
+    "Psittacula krameri": {
+      "description": "The Rose-ringed Parakeet is a green parrot with a long tapered tail and a strong red bill. Adult males usually show a dark and pink neck ring.",
+      "habitat": "Woodland edges, parks, gardens, farmland and urban areas with trees.",
+      "diet": "Seeds, fruits, buds, flowers and cultivated grains.",
+      "distribution": "Native to parts of Africa and South Asia; widespread in India.",
+      "family": "Psittaculidae",
+      "source_name": "Local starter species guide"
+    },
+    "Pycnonotus cafer": {
+      "description": "The Red-vented Bulbul is a familiar crested songbird with a dark head, brown-scaled body and a distinctive red patch beneath the tail.",
+      "habitat": "Gardens, scrub, farmland, forest edges and towns.",
+      "diet": "Fruits, berries, nectar and insects.",
+      "distribution": "Common across much of the Indian subcontinent.",
+      "family": "Pycnonotidae",
+      "source_name": "Local starter species guide"
+    },
+    "Acridotheres tristis": {
+      "description": "The Common Myna is a brown starling with a black head, yellow bill and legs, and a conspicuous yellow patch of bare skin behind the eye.",
+      "habitat": "Town and city parks, farmland, open woodland and other human-modified habitats.",
+      "diet": "Insects, fruit, scraps, grains and a wide range of food items.",
+      "distribution": "Native to Asia and widespread across the Indian subcontinent.",
+      "family": "Sturnidae",
+      "source_name": "Local starter species guide"
+    },
+    "Corvus splendens": {
+      "description": "The House Crow is a familiar, adaptable crow with a grey neck and breast contrasting with its darker head, wings and tail.",
+      "habitat": "Villages, towns, cities, agricultural areas and coastal settlements.",
+      "diet": "Omnivorous; eats insects, fruit, grains, carrion and human food waste.",
+      "distribution": "Native to the Indian subcontinent and introduced in some other regions.",
+      "family": "Corvidae",
+      "source_name": "Local starter species guide"
+    },
+    "Eudynamys scolopaceus": {
+      "description": "The Asian Koel is a large cuckoo. The male is glossy black with a pale eye and greenish bill; the female is brown and heavily spotted and barred.",
+      "habitat": "Woodland, gardens, plantations and tree-rich urban areas.",
+      "diet": "Mainly fruit, especially figs and other berries.",
+      "distribution": "Occurs across South and Southeast Asia, including widely across India.",
+      "family": "Cuculidae",
+      "source_name": "Local starter species guide"
+    },
+    "Centropus sinensis": {
+      "description": "The Greater Coucal is a large, ground-dwelling cuckoo with a glossy black head and body, chestnut wings and a long dark tail.",
+      "habitat": "Dense scrub, gardens, reedbeds, wetlands, plantations and forest edges.",
+      "diet": "Insects, caterpillars, snails, small reptiles, eggs and other small animals.",
+      "distribution": "Widespread in the Indian subcontinent and parts of Southeast Asia.",
+      "family": "Cuculidae",
+      "source_name": "Local starter species guide"
+    },
+    "Spilopelia chinensis": {
+      "description": "The Spotted Dove is a medium-sized dove with a scaled-looking breast and a distinctive black hind-neck patch covered in white spots.",
+      "habitat": "Gardens, scrub, open woodland, farmland and urban neighbourhoods.",
+      "diet": "Mainly seeds and grains, with some small invertebrates.",
+      "distribution": "Widespread across South and Southeast Asia, including India.",
+      "family": "Columbidae",
+      "source_name": "Local starter species guide"
+    },
+    "Cinnyris asiaticus": {
+      "description": "The Purple Sunbird is a tiny, active nectar-feeding bird. Breeding males appear glossy dark purple, while females are olive and yellowish below.",
+      "habitat": "Gardens, scrub, open woodland and flowering trees in towns and countryside.",
+      "diet": "Nectar and small insects, especially when feeding young.",
+      "distribution": "Common across much of the Indian subcontinent and nearby regions.",
+      "family": "Nectariniidae",
+      "source_name": "Local starter species guide"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+python-multipart
+numpy
+Pillow
+timm
+huggingface_hub
+google-genai
+python-dotenv
+httpx

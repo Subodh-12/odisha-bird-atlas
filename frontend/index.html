@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="theme-color" content="#173f32">
+
+    <meta
+        name="description"
+        content="Identify a bird from a photograph and learn about the species."
+    >
+
+    <title>Indian Bird Atlas — Identify a Bird</title>
+
+    <link rel="stylesheet" href="common.css">
+
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+
+    <header class="site-header">
+
+        <a class="brand" href="index.html">
+
+            <span class="brand-mark">✳</span>
+
+            <span>
+                <span class="brand-name">
+                    Indian Bird Atlas
+                </span>
+
+                <span class="brand-subtitle">
+                    A field guide in your browser
+                </span>
+            </span>
+
+        </a>
+
+        <div class="header-right">
+
+            <div
+                class="api-status"
+                id="apiStatus"
+                data-state="checking"
+            >
+
+                <span class="status-dot"></span>
+
+                <span id="apiStatusText">
+                    Checking identification service...
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="page-shell">
+
+        <!-- HERO SECTION -->
+
+        <section class="hero">
+
+            <div class="hero-copy">
+
+                <p class="eyebrow">
+                    Discover the birds around you
+                </p>
+
+                <h1>
+                    Every bird has
+                    <br>
+                    <span>a story.</span>
+                </h1>
+
+                <p class="hero-description">
+
+                    Upload a clear photograph to identify
+                    a bird and discover useful facts about
+                    its habitat, diet and distribution.
+
+                </p>
+
+                <div class="hero-points">
+
+                    <span>
+                        <i>✓</i>
+                        One clear identification
+                    </span>
+
+                    <span>
+                        <i>✓</i>
+                        Simple species information
+                    </span>
+
+                    <span>
+                        <i>✓</i>
+                        Designed for bird discovery
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-art">
+
+                <div class="art-circle art-circle-one"></div>
+
+                <div class="art-circle art-circle-two"></div>
+
+                <div class="art-label">
+                    OBSERVE · IDENTIFY · LEARN
+                </div>
+
+                <div class="art-bird">
+                    𓅪
+                </div>
+
+                <div class="art-leaf leaf-one">✦</div>
+
+                <div class="art-leaf leaf-two">✦</div>
+
+            </div>
+
+        </section>
+
+
+        <!-- UPLOAD SECTION -->
+
+        <section class="upload-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        Start with a photograph
+                    </p>
+
+                    <h2>
+                        Identify your bird
+                    </h2>
+
+                </div>
+
+                <p class="muted section-hint">
+
+                    Best results come from a sharp image
+                    where the bird is easy to see.
+
+                </p>
+
+            </div>
+
+
+            <div class="upload-card">
+
+                <!-- DROP ZONE -->
+
+                <div
+                    id="uploadArea"
+                    class="upload-area"
+                    role="button"
+                    tabindex="0"
+                >
+
+                    <input
+                        id="imageInput"
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp,image/bmp"
+                        hidden
+                    >
+
+                    <div class="upload-icon">
+                        ↑
+                    </div>
+
+                    <h3>
+                        Drop your bird photograph here
+                    </h3>
+
+                    <p class="muted">
+                        or
+                        <span class="browse-link">
+                            browse files
+                        </span>
+                        from your device
+                    </p>
+
+                    <div class="file-types">
+
+                        JPG · PNG · WEBP · BMP
+
+                        <span>
+                            Maximum 10 MB
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- IMAGE PREVIEW -->
+
+                <div
+                    class="preview-panel"
+                    id="previewContainer"
+                    hidden
+                >
+
+                    <img
+                        id="previewImage"
+                        alt="Selected bird photograph"
+                    >
+
+                    <div class="preview-details">
+
+                        <div>
+
+                            <strong id="previewName">
+                                Selected image
+                            </strong>
+
+                            <p
+                                id="fileInfo"
+                                class="muted"
+                            >
+                                Image details
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            id="removeImageBtn"
+                            class="remove-btn"
+                        >
+                            Remove
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- IDENTIFY BUTTON -->
+
+                <div class="upload-actions">
+
+                    <p class="privacy-note">
+
+                        Your photograph is analysed by the local API.
+                        Gemini receives only the species name to prepare its information profile.
+
+                    </p>
+
+                    <button
+                        id="identifyBtn"
+                        class="btn identify-btn"
+                        type="button"
+                        disabled
+                    >
+
+                        Identify this bird →
+
+                    </button>
+
+                </div>
+
+
+                <!-- ERROR MESSAGE -->
+
+                <div
+                    id="errorMessage"
+                    class="error-box"
+                    role="alert"
+                ></div>
+
+
+                <!-- LOADING -->
+
+                <div
+                    id="loading"
+                    class="loading-panel"
+                    hidden
+                >
+
+                    <span class="spinner"></span>
+
+                    <div>
+
+                        <strong id="loadingTitle">
+                            Analysing your photograph...
+                        </strong>
+
+                        <p class="muted">
+
+                            Checking the image and comparing
+                            its visual features.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- IMAGE TIPS -->
+
+        <section class="tips-section">
+
+            <div class="tip-card">
+
+                <span class="tip-number">01</span>
+
+                <div>
+
+                    <strong>
+                        Keep the bird visible
+                    </strong>
+
+                    <p>
+                        Try to include the full bird and avoid
+                        objects covering it.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                <span class="tip-number">02</span>
+
+                <div>
+
+                    <strong>
+                        Use a sharp photograph
+                    </strong>
+
+                    <p>
+                        Good focus and natural light make
+                        details easier to recognise.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                <span class="tip-number">03</span>
+
+                <div>
+
+                    <strong>
+                        One bird per photo
+                    </strong>
+
+                    <p>
+                        This version is designed to identify
+                        one main bird in each image.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        Built for curious bird watchers ·
+        <strong>Indian Bird Atlas</strong>
+
+    </footer>
+
+
+    <script src="script.js" defer></script>
+
+</body>
+
+</html>
